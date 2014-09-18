@@ -1,6 +1,6 @@
 # Return a reversed copy of the array
 def reverse(an_array)
-  return an_array.reverse
+  an_array.reverse
 end
 
 #Return a map of letters and counts of letters
@@ -16,7 +16,7 @@ def histogram(a_string)
     letterMap[thisLetter] = a_string.count(thisLetter)
     letter += 1
   end
-  return letterMap
+  letterMap
 end
 
 # Sum all the numbers in the array
@@ -24,7 +24,14 @@ end
 # Be sure to only sum the numbers
 # (Hint: the is_a? method might be useful here)
 def sum_only_numbers(an_array)
-
+  sum = 0.0
+  an_array = an_array.flatten
+  for n in an_array
+    if n.class == Float || n.class == Fixnum
+      sum = sum + n
+    end
+  end
+  sum
 end
 
 # For i from 1 to 100, return an array.
@@ -41,7 +48,7 @@ end
 # Uncomment each of these to test your functions
 puts reverse([3,6,'dog']).inspect
 puts histogram('The Quick brown fox').inspect
-# puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
+puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
 # puts fizzbuzz.join("\n")
 
 
