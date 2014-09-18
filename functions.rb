@@ -41,14 +41,26 @@ end
 # If i is a multiple of 3 and 5, the element is 'FizzBuzz'
 # Otherwise, the element is simply the value of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
-def fuzzbuzz
-
+def fizzbuzz
+  fizzBuzzArray = Array.new
+  for num in 1..100
+    if num.to_f / 3.to_f == num/3 && num.to_f / 5.to_f == num/5 then
+	fizzBuzzArray << 'FizzBuzz'
+    elsif num.to_f / 3.to_f == num/3 then
+	fizzBuzzArray << 'Fizz'
+    elsif num.to_f / 5.to_f == num/5 then
+	fizzBuzzArray << 'Buzz'
+    else
+        fizzBuzzArray << num
+    end
+  end
+  fizzBuzzArray
 end
 
 # Uncomment each of these to test your functions
 puts reverse([3,6,'dog']).inspect
 puts histogram('The Quick brown fox').inspect
 puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
-# puts fizzbuzz.join("\n")
+puts fizzbuzz.join("\n")
 
 
