@@ -7,4 +7,8 @@ class Bookmark
   def visit!
     @last_visited = Time.now
   end
+  def update (url, title)
+    @url = url
+    @title = title
+  end
 end
